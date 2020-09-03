@@ -14,7 +14,8 @@ import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
-import styles from "../../assets/jss/styles/components/headerStyle.js";
+import styles from "./headerStyle.js";
+import { Container } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
@@ -67,30 +68,32 @@ const Header = (props) => {
   );
   return (
     <AppBar className={appBarClasses}>
-      <Toolbar className={classes.container}>
-        {leftLinks !== undefined ? brandComponent : null}
-        <div className={classes.flex}>
-          {leftLinks !== undefined ? (
-            <Hidden smDown implementation="css">
-              {leftLinks}
-            </Hidden>
-          ) : (
-            brandComponent
-          )}
-        </div>
-        <Hidden smDown implementation="css">
-          {rightLinks}
-        </Hidden>
-        <Hidden mdUp>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerToggle}
-          >
-            <Menu />
-          </IconButton>
-        </Hidden>
-      </Toolbar>
+      <Container maxWidth="lg">
+        <Toolbar className={classes.toolbar} disableGutters>
+          {leftLinks !== undefined ? brandComponent : null}
+          <div className={classes.flex}>
+            {leftLinks !== undefined ? (
+              <Hidden smDown implementation="css">
+                {leftLinks}
+              </Hidden>
+            ) : (
+              brandComponent
+            )}
+          </div>
+          <Hidden smDown implementation="css">
+            {rightLinks}
+          </Hidden>
+          <Hidden mdUp>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerToggle}
+            >
+              <Menu />
+            </IconButton>
+          </Hidden>
+        </Toolbar>
+      </Container>
       <Hidden mdUp implementation="js">
         <Drawer
           variant="temporary"

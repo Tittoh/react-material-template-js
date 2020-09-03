@@ -11,13 +11,14 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import {Apps, CloudDownload, Facebook, Instagram, ShoppingCart, Twitter} from "@material-ui/icons";
+import {Apps, Facebook, GitHub, Instagram, Twitter} from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
-import Button from "../../components/CustomButtons/Button.js";
+import Button from "@material-ui/core/Button";
 
-import styles from "../../assets/jss/styles/components/headerLinksStyle.js";
+
+import styles from "./headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 
@@ -28,10 +29,10 @@ const HeaderLinks = () => {
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="Components"
+          buttonText="Examples"
           buttonProps={{
             className: classes.navLink,
-            color: "transparent"
+            color: "inherit"
           }}
           buttonIcon={Apps}
           dropdownList={[
@@ -43,29 +44,26 @@ const HeaderLinks = () => {
               target="_blank"
               className={classes.dropdownLink}
             >
-              Documentation
+              Landing page
+            </a>,
+            <a
+                href="#"
+                target="_blank"
+                className={classes.dropdownLink}
+            >
+              Login / Signup
             </a>
           ]}
         />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="#"
-          color="transparent"
+          href="https://github.com/Tittoh/react-material-template-js"
+          color="inherit"
           target="_blank"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> Download
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-            href="#"
-            color="transparent"
-            target="_blank"
-            className={classes.navLink}
-        >
-          <ShoppingCart className={classes.icons} /> Get Pro
+          <GitHub className={classes.icons} /> Github
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
