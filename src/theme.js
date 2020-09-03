@@ -11,27 +11,53 @@ const theme = createMuiTheme({
       default: "#fafafa",
     },
     primary: {
+      light: "#0455bf",
       main: "#0455BF",
+      dark: "#002e8e",
       contrastText: "#fff",
     },
     secondary: {
-      light: "rgba(255, 121, 176, 1)",
-      main: "rgba(255, 64, 129, 1)",
-      dark: "rgba(198, 0, 85, 1)",
-      contrastText: "rgba(255, 255, 255, 1)",
+      light: "#f46cca",
+      main: "#bf3899",
+      dark: "#8b006b",
+      contrastText: "#fff",
     },
     dark: {
       main: "#041326",
       contrastText: "#fff",
     },
     error: { main: "#f44336" },
-    success: { main: "#4caf50" },
+    warning: { main: "#ff9800" },
     info: { main: "#00acc1" },
+    success: { main: "#4caf50" },
+    grey: {
+      A100: "#d5d5d5",
+      A200: "#aaaaaa",
+      A400: "#303030",
+      A700: "#616161",
+    },
     text: {
       primary: "rgba(0, 0, 0, 0.87)",
       secondary: "rgba(0, 0, 0, 0.54)",
       disabled: "rgba(0, 0, 0, 0.38)",
       hint: "rgba(0, 0, 0, 0.38)",
+    },
+  },
+  typography: {
+    h3: {
+      fontWeight: "300",
+    },
+    h4: {
+      fontWeight: "300",
+    },
+    h5: {
+      fontWeight: "300",
+    },
+    h6: {
+      fontWeight: "300",
+    },
+    button: {
+      fontWeight: "400",
     },
   },
   transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)",

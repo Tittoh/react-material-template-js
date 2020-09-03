@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3d3e0c08-5198-46c5-b75d-ab282fe55250/deploy-status)](https://app.netlify.com/sites/tittoh-muitemplate/deploys)
+
 ## React template for Material-UI
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
