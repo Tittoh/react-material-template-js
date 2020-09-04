@@ -11,7 +11,7 @@ import Footer from "../../components/Footer/Footer.js";
 import Parallax from "../../components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "../../components/Header/HeaderLinks.js";
-import BasicComponents from "./Sections/BasicComponents";
+import BasicComponents from "./Sections/InputsSection";
 
 import styles from "./componentsStyle.js";
 
