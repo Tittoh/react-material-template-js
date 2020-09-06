@@ -4,6 +4,7 @@ import {
   Grid,
   Typography,
   IconButton,
+  ButtonGroup,
   Divider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -67,6 +68,16 @@ export default function InputSection() {
           >
             <AddShoppingCart />
           </IconButton>
+          <ButtonGroup
+            color="primary"
+            variant="contained"
+            size="small"
+            aria-label=" contained small button group"
+          >
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+          </ButtonGroup>
         </Grid>
       </Grid>
       <Typography xs={12} variant="h6" className={classes.gray} gutterBottom>
@@ -107,25 +118,43 @@ export default function InputSection() {
       <Grid container>
         <Grid item xs={2} />
         <Grid item>
-          <Button className={classes.button} variant="contained">
+          <Button size="small" className={classes.button} variant="contained">
             Default
           </Button>
-          <Button className={classes.button} variant="contained" color="primary">
+          <Button
+            size="small"
+            className={classes.button}
+            variant="contained"
+            color="primary"
+          >
             Primary
           </Button>
-          <Button className={classes.button} variant="contained" color="secondary">
+          <Button
+            size="small"
+            className={classes.button}
+            variant="contained"
+            color="secondary"
+          >
             Secondary
           </Button>
-          <Button className={classes.btnInfo} variant="contained">
+          <Button size="small" className={classes.btnInfo} variant="contained">
             Info
           </Button>
-          <Button className={classes.btnSuccess} variant="contained">
+          <Button
+            size="small"
+            className={classes.btnSuccess}
+            variant="contained"
+          >
             Success
           </Button>
-          <Button className={classes.btnWarning} variant="contained">
+          <Button
+            size="small"
+            className={classes.btnWarning}
+            variant="contained"
+          >
             Warning
           </Button>
-          <Button className={classes.btnError} variant="contained">
+          <Button size="small" className={classes.btnError} variant="contained">
             Error
           </Button>
         </Grid>

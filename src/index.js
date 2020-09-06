@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, Router } from "react-router-dom";
 import { ThemeProvider, responsiveFontSizes } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
@@ -16,13 +16,13 @@ const hist = createBrowserHistory();
 const globalStyle = responsiveFontSizes(theme);
 
 ReactDOM.render(
-  <BrowserRouter history={hist}>
+  <Router history={hist}>
     <ThemeProvider theme={globalStyle}>
       <CssBaseline />
       <Switch>
         <Route path="/" component={Components} />
       </Switch>
     </ThemeProvider>
-  </BrowserRouter>,
+  </Router>,
   document.getElementById("root")
 );
