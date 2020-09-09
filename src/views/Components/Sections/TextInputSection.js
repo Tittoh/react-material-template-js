@@ -42,7 +42,7 @@ export default function TextInputSection() {
     <div>
       <Divider />
       <Typography variant="h5" gutterBottom>
-        TextInput
+        Text Input
       </Typography>
       <Typography xs={12} variant="h6" className={classes.gray} gutterBottom>
         Text Field
