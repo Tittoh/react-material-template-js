@@ -13,6 +13,7 @@ const componentsStyle = (theme) => ({
     margin: "10px 0 0",
   },
   main: {
+    paddingTop: "60px",
     background: "#FFFFFF",
     position: "relative",
     zIndex: "3",

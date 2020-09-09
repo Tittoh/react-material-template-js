@@ -1,7 +1,4 @@
-const InputStyle = (theme) => ({
-  basics: {
-    padding: "70px 0",
-  },
+const buttonsStyle = (theme) => ({
   gray: {
     color: theme.palette.grey.A700,
   },
@@ -51,4 +48,4 @@ const InputStyle = (theme) => ({
   },
 });
 
-export default InputStyle;
+export default buttonsStyle;

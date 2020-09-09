@@ -2,7 +2,7 @@ import React from "react";
 // react components for routing our app without refresh
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid } from "@material-ui/core";
+import {Container, Typography, Grid, Divider} from "@material-ui/core";
 // @material-ui/icons
 import { ArrowDownwardRounded } from "@material-ui/icons";
 // components
@@ -11,9 +11,10 @@ import Footer from "../../components/Footer/Footer.js";
 import Parallax from "../../components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "../../components/Header/HeaderLinks.js";
-import BasicComponents from "./Sections/InputsSection";
+import ButtonsSection from "./Sections/ButtonsSection";
 
 import styles from "./componentsStyle.js";
+import TextInputSection from "./Sections/TextInputSection";
 
 const useStyles = makeStyles(styles);
 
@@ -53,7 +54,12 @@ export default function Components(props) {
       </Parallax>
 
       <Container maxWidth="lg" className={classes.main}>
-        <BasicComponents />
+        <Typography variant="h4" gutterBottom>
+          Inputs
+        </Typography>
+        <Divider />
+        <ButtonsSection />
+        <TextInputSection />
       </Container>
       <Footer />
     </div>

@@ -6,22 +6,19 @@ import {
   IconButton,
   ButtonGroup,
   Divider,
+  TextField,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 import { AddShoppingCart, Favorite } from "@material-ui/icons";
-import styles from "./InputStyle";
+import styles from "./buttonsStyle";
 
 const useStyles = makeStyles(styles);
 
 export default function InputSection() {
   const classes = useStyles();
   return (
-    <div className={classes.basics}>
-      <Typography variant="h4" gutterBottom>
-        Inputs
-      </Typography>
-      <Divider />
+    <div>
       <Typography variant="h5" gutterBottom>
         Buttons
       </Typography>
