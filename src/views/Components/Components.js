@@ -15,6 +15,7 @@ import ButtonsSection from "./Sections/ButtonsSection";
 
 import styles from "./componentsStyle.js";
 import TextInputSection from "./Sections/TextInputSection";
+import OtherInputsSection from "./Sections/OtherInputsSection";
 
 const useStyles = makeStyles(styles);
 
@@ -57,9 +58,12 @@ export default function Components(props) {
         <Typography variant="h4" gutterBottom>
           Inputs
         </Typography>
-        <Divider />
+        <Divider className={classes.divider} />
         <ButtonsSection />
+        <Divider className={classes.divider} />
         <TextInputSection />
+        <Divider className={classes.divider} />
+        <OtherInputsSection />
       </Container>
       <Footer />
     </div>

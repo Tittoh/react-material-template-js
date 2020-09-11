@@ -27,6 +27,9 @@ const componentsStyle = (theme) => ({
   textCenter: {
     textAlign: "center",
   },
+  divider: {
+    margin: "3vh auto",
+  },
 });
 
 export default componentsStyle;

@@ -2,7 +2,6 @@ import React from "react";
 import {
   Grid,
   Typography,
-  Divider,
   TextField,
   InputAdornment,
   FormControl,
@@ -38,7 +37,6 @@ export default function TextInputSection() {
 
   return (
     <div>
-      <Divider />
       <Typography variant="h5" gutterBottom>
         Text Input
       </Typography>
