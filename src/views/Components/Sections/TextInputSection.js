@@ -20,10 +20,8 @@ const useStyles = makeStyles(styles);
 export default function TextInputSection() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
-    amount: "",
     password: "",
     weight: "",
-    weightRange: "",
     showPassword: false,
   });
 
@@ -47,36 +45,16 @@ export default function TextInputSection() {
       <Typography xs={12} variant="h6" className={classes.gray} gutterBottom>
         Text Field
       </Typography>
-      <Grid container>
-        <TextField className={classes.input} label="Standard" />
-        <TextField
-          className={classes.input}
-          helperText="Some important text"
-          label="Filled"
-        />
-        <TextField
-          error
-          required
-          className={classes.input}
-          label="Validation"
-        />
-        <TextField
-          error
-          helperText="Incorrect entry."
-          className={classes.input}
-          label="Validation"
-        />
+      <Grid container className={classes.input}>
+        <TextField label="Standard" />
+        <TextField helperText="Some important text" label="Filled" />
+        <TextField error required label="Validation" />
+        <TextField error helperText="Incorrect entry." label="Validation" />
       </Grid>
-      <Grid container>
-        <TextField
-          className={classes.input}
-          label="Outlined"
-          variant="outlined"
-          size="small"
-        />
+      <Grid container className={classes.input}>
+        <TextField label="Outlined" variant="outlined" size="small" />
         <TextField
           color="secondary"
-          className={classes.input}
           label="Secondary"
           variant="outlined"
           size="small"
@@ -84,7 +62,6 @@ export default function TextInputSection() {
         <TextField
           error
           required
-          className={classes.input}
           label="Validation"
           variant="outlined"
           size="small"
@@ -92,13 +69,12 @@ export default function TextInputSection() {
         <TextField
           error
           helperText="Incorrect entry."
-          className={classes.input}
           label="Validation"
           variant="outlined"
           size="small"
         />
       </Grid>
-      <Grid container>
+      <Grid container className={classes.input}>
         <TextField
           className={classes.input}
           label="Start adornment"
@@ -112,7 +88,6 @@ export default function TextInputSection() {
           }}
         />
         <TextField
-          className={classes.input}
           label="End adornment"
           size="small"
           InputProps={{
@@ -123,7 +98,7 @@ export default function TextInputSection() {
             ),
           }}
         />
-        <FormControl className={classes.input}>
+        <FormControl>
           <InputLabel htmlFor="standard-adornment-password">
             Password
           </InputLabel>
@@ -145,7 +120,7 @@ export default function TextInputSection() {
             }
           />
         </FormControl>
-        <FormControl className={classes.input}>
+        <FormControl>
           <Input
             id="standard-adornment-weight"
             value={values.weight}
@@ -160,6 +135,36 @@ export default function TextInputSection() {
             Weight
           </FormHelperText>
         </FormControl>
+      </Grid>
+      <Grid container className={classes.input}>
+        <TextField
+          id="standard-textarea"
+          label="Multiline Placeholder"
+          placeholder="Placeholder"
+          multiline
+        />
+        <TextField
+          id="outlined-textarea"
+          label="Multiline Placeholder"
+          placeholder="Placeholder"
+          multiline
+          variant="outlined"
+        />
+        <TextField
+          id="standard-multiline-static"
+          label="Multiline"
+          multiline
+          rows={4}
+          defaultValue="Default Value"
+        />
+        <TextField
+          id="outlined-multiline-static"
+          label="Multiline"
+          multiline
+          rows={4}
+          defaultValue="Default Value"
+          variant="outlined"
+        />
       </Grid>
     </div>
   );
