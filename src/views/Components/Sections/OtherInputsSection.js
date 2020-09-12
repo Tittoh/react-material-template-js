@@ -7,6 +7,7 @@ import {
   Checkbox,
   RadioGroup,
   FormControlLabel,
+  Switch,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Favorite, FavoriteBorder } from "@material-ui/icons";
@@ -33,7 +34,7 @@ export default function OtherInputsSection() {
   const handleChange = (event) => {
     setValue({ ...state, [event.target.name]: event.target.value });
   };
-  const checkboxChange = (event) => {
+  const handleChange2 = (event) => {
     setValue({ ...state, [event.target.name]: event.target.checked });
   };
 
@@ -97,7 +98,7 @@ export default function OtherInputsSection() {
               control={
                 <Checkbox
                   checked={state.checkedA}
-                  onChange={checkboxChange}
+                  onChange={handleChange2}
                   name="checkedA"
                 />
               }
@@ -107,7 +108,7 @@ export default function OtherInputsSection() {
               control={
                 <Checkbox
                   checked={state.checkedB}
-                  onChange={checkboxChange}
+                  onChange={handleChange2}
                   name="checkedB"
                   color="primary"
                 />
@@ -129,6 +130,41 @@ export default function OtherInputsSection() {
               control={<Checkbox name="checkedD" />}
               label="Disabled"
             />
+          </FormControl>
+        </Grid>
+        <Grid item xs={3}>
+          <FormControl component="fieldset">
+            <Typography
+              xs={12}
+              variant="h6"
+              className={classes.gray}
+              gutterBottom
+            >
+              Switches
+            </Typography>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={state.checkedF}
+                  onChange={handleChange2}
+                  name="checkedF"
+                />
+              }
+              label="Secondary"
+            />
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={state.checkedG}
+                  onChange={handleChange2}
+                  name="checkedG"
+                  color="primary"
+                />
+              }
+              label="Primary"
+            />
+            <FormControlLabel control={<Switch />} label="Uncontrolled" />
+            <FormControlLabel disabled control={<Switch />} label="Disabled" />
           </FormControl>
         </Grid>
       </Grid>
