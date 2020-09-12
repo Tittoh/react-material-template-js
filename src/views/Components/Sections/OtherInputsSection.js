@@ -3,6 +3,7 @@ import {
   Grid,
   Typography,
   FormControl,
+  Slider,
   Radio,
   Checkbox,
   RadioGroup,
@@ -15,6 +16,9 @@ import { Favorite, FavoriteBorder } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),
+  },
+  slider: {
+    width: "30ch",
   },
   gray: {
     color: theme.palette.grey.A700,
@@ -29,6 +33,7 @@ export default function OtherInputsSection() {
     checkedB: true,
     checkedF: true,
     checkedG: true,
+    slider: 30,
   });
 
   const handleChange = (event) => {
@@ -79,7 +84,7 @@ export default function OtherInputsSection() {
                 value="disabled"
                 disabled
                 control={<Radio color="primary" />}
-                label="(Disabled option)"
+                label="Disabled"
               />
             </RadioGroup>
           </FormControl>
@@ -165,6 +170,49 @@ export default function OtherInputsSection() {
             />
             <FormControlLabel control={<Switch />} label="Uncontrolled" />
             <FormControlLabel disabled control={<Switch />} label="Disabled" />
+          </FormControl>
+        </Grid>
+        <Grid item xs={3}>
+          <FormControl component="fieldset">
+            <Typography
+              xs={12}
+              variant="h6"
+              className={classes.gray}
+              gutterBottom
+            >
+              Slider
+            </Typography>
+            <Typography id="range-slider" gutterBottom>
+              Continuous
+            </Typography>
+            <Slider
+              className={classes.slider}
+              defaultValue={30}
+              valueLabelDisplay="auto"
+              aria-labelledby="range-slider"
+            />
+            <Typography id="discrete-slider" gutterBottom>
+              Discrete
+            </Typography>
+            <Slider
+              defaultValue={30}
+              color="secondary"
+              aria-labelledby="discrete-slider"
+              valueLabelDisplay="auto"
+              step={10}
+              marks
+              min={10}
+              max={110}
+            />
+            <Typography id="range-slider" gutterBottom>
+              Range
+            </Typography>
+            <Slider
+              defaultValue={[20, 37]}
+              onChange={handleChange}
+              valueLabelDisplay="auto"
+              aria-labelledby="range-slider"
+            />
           </FormControl>
         </Grid>
       </Grid>
