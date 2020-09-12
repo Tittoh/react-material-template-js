@@ -2,19 +2,24 @@ import React from "react";
 import {
   Grid,
   Typography,
-  TextField,
   InputAdornment,
-  FormControl,
-  InputLabel,
-  Input,
   IconButton,
-  FormHelperText,
+  TextField,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "./textInputStyle";
 import { AccountCircle, Visibility, VisibilityOff } from "@material-ui/icons";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
+  gray: {
+    color: theme.palette.grey.A700,
+  },
+}));
 
 export default function TextInputSection() {
   const classes = useStyles();
@@ -43,13 +48,13 @@ export default function TextInputSection() {
       <Typography xs={12} variant="h6" className={classes.gray} gutterBottom>
         Text Field
       </Typography>
-      <Grid container className={classes.input}>
+      <Grid container className={classes.margin}>
         <TextField label="Standard" />
         <TextField helperText="Some important text" label="Filled" />
         <TextField error required label="Validation" />
         <TextField error helperText="Incorrect entry." label="Validation" />
       </Grid>
-      <Grid container className={classes.input}>
+      <Grid container className={classes.margin}>
         <TextField label="Outlined" variant="outlined" size="small" />
         <TextField
           color="secondary"
@@ -72,7 +77,7 @@ export default function TextInputSection() {
           size="small"
         />
       </Grid>
-      <Grid container className={classes.input}>
+      <Grid container className={classes.margin}>
         <TextField
           className={classes.input}
           label="Start adornment"
@@ -96,16 +101,14 @@ export default function TextInputSection() {
             ),
           }}
         />
-        <FormControl>
-          <InputLabel htmlFor="standard-adornment-password">
-            Password
-          </InputLabel>
-          <Input
-            size="small"
-            type={values.showPassword ? "text" : "password"}
-            value={values.password}
-            onChange={handleChange("password")}
-            endAdornment={
+        <TextField
+          label="Password"
+          size="small"
+          type={values.showPassword ? "text" : "password"}
+          value={values.password}
+          onChange={handleChange("password")}
+          InputProps={{
+            endAdornment: (
               <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
@@ -115,26 +118,20 @@ export default function TextInputSection() {
                   {values.showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>
-            }
-          />
-        </FormControl>
-        <FormControl>
-          <Input
-            id="standard-adornment-weight"
-            value={values.weight}
-            onChange={handleChange("weight")}
-            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-            aria-describedby="standard-weight-helper-text"
-            inputProps={{
-              "aria-label": "weight",
-            }}
-          />
-          <FormHelperText id="standard-weight-helper-text">
-            Weight
-          </FormHelperText>
-        </FormControl>
+            ),
+          }}
+        />
+        <TextField
+          size="small"
+          value={values.weight}
+          onChange={handleChange("weight")}
+          helperText="Weight"
+          InputProps={{
+            endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
+          }}
+        />
       </Grid>
-      <Grid container className={classes.input}>
+      <Grid container className={classes.margin}>
         <TextField
           id="standard-textarea"
           label="Multiline Placeholder"
