@@ -49,7 +49,7 @@ export default function OtherInputsSection() {
         Other
       </Typography>
       <Grid container>
-        <Grid item xs={3}>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
           <FormControl component="fieldset">
             <Typography
               xs={12}
@@ -89,7 +89,7 @@ export default function OtherInputsSection() {
             </RadioGroup>
           </FormControl>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
           <FormControl component="fieldset">
             <Typography
               xs={12}
@@ -137,7 +137,7 @@ export default function OtherInputsSection() {
             />
           </FormControl>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
           <FormControl component="fieldset">
             <Typography
               xs={12}
@@ -172,7 +172,7 @@ export default function OtherInputsSection() {
             <FormControlLabel disabled control={<Switch />} label="Disabled" />
           </FormControl>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
           <FormControl component="fieldset">
             <Typography
               xs={12}
